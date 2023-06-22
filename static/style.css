@@ -1,0 +1,74 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.container {
+    background-color: #fff;
+    max-width: 600px;
+    margin: 50px auto; /* Adjust the margin-top value to move the box down */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-size: 28px; /* Increase the font size */
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+form {
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    padding: 10px; /* Increase the input padding */
+    width: 300px;
+    font-size: 16px; /* Increase the input text size */
+}
+
+button {
+    padding: 10px 20px; /* Increase the button padding */
+    border: none;
+    cursor: pointer;
+    font-size: 16px; /* Increase the button text size */
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+button[name="action"][value="add"] {
+    background-color: blue;
+    color: white;
+}
+
+button[name="action"][value="complete"] {
+    background-color: green;
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Center-align the tasks */
+}
+
+li.completed {
+    text-decoration: line-through;
+    color: green;
+}
+
+button.undo-button {
+    background-color: blue;
+    color: white;
+}
+
+ul li {
+    display: flex; /* Align complete buttons and tasks */
+    align-items: center;
+    justify-content: space-between; /* Create space between complete buttons and tasks */
+    padding-bottom: 10px; /* Add gap between each task */
+    text-align: left; /* Left-align the tasks */
+}
+
+ul li button[name="action"][value="complete"] {
+    margin-left: 10px; /* Add a gap between the complete button and the task */
+}

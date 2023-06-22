@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Tracker</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Tracker</h1>
+
+        <form method="POST">
+            <input type="text" name="description" placeholder="Enter task description">
+            <button type="submit" name="action" value="add">Add Task</button>
+        </form>
+
+        {% if tasks %}
+            <h2>Tasks:</h2>
+            <ul>
+                {% for task in tasks %}
+                    <li{% if task.completed %} class="completed"{% endif %}>
+                        {{ task.description }}
+                        <form method="POST" style="display: inline;">
+                            <input type="hidden" name="task_id" value="{{ task.id }}">
+                            <button type="submit" name="action" value="complete">Complete</button>
+                        </form>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No tasks yet.</p>
+        {% endif %}
+
+        <form method="POST">
+            <button type="submit" name="action" value="undo" class="undo-button">Undo ↻</button>
+        </form>
+    </div>
+</body>
+</html>
